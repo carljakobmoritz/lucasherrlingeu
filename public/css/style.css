@@ -1,0 +1,97 @@
+/* public/css/style.css */
+
+/* 1. The Foundation: "Digital Paper" */
+body {
+    background-color: white;  /* Warm, paper-like off-white */
+    color: black;             /* Soft Charcoal (not harsh black) */
+    font-family: 'Noto Serif', serif; /* The reading font */
+    font-size: 1.25rem;         /* Slightly larger for readability */
+    line-height: 1.2;           /* Breathing room between lines */
+    font-weight: 300;
+    padding-bottom: 2cm;
+}
+
+/* 2. Stylish Headings */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    color: red;
+}
+
+/* 2. Stylish Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    color: black;
+}
+
+h1 {
+    font-size: 3.5rem; /* Large and confident */
+    margin-top: 3.5rem;
+}
+
+/* 3. The Navbar - Minimal & Clean */
+.navbar {
+    background-color: white !important; /* Match body background */
+    border-bottom: 1px solid #e0e0e0;     /* Subtle divider */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+.navbar-brand:hover {
+    font-size: 1.8rem;
+    color: rgb(255, 72, 72);
+}
+
+.nav-link {
+    color: #000 !important;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #000 !important;
+    text-decoration: underline; /* Classic link style */
+    text-underline-offset: 5px;
+}
+
+/* 4. Buttons - Modest & refined */
+.btn-primary {
+    background-color: #2c2c2c;
+    border: 1px solid #2c2c2c;
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    border-radius: 2px; /* Slight rounding, not sharp, not pill */
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #2c2c2c;
+}
+
+/* 1. Remove the border and the "click glow" box */
+.navbar-toggler {
+    border: none !important;      /* No square border */
+    box-shadow: none !important;  /* No glow when clicked */
+    padding: 0.25rem 0.5rem;      /* Adjust padding if needed */
+}
+
+/* 2. Remove the focus outline (blue ring) on some browsers */
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* 3. Force the "Three Lines" to be Dark Charcoal (#2c2c2c) */
+/* We replace the default Bootstrap icon with a custom recolored one */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232c2c2c' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
