@@ -1,0 +1,51 @@
+:root {
+  /* Light mode colors */
+  --bg-color: #fff7fa;
+  --text-color: black;
+  --link-color: rgb(255, 0, 0);
+  --title-color: rgb(44, 39, 39);
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --bg-color: #181216;
+  --text-color: #ffffff;
+  --link-color: rgb(255, 0, 0);
+  --title-color: rgb(44, 39, 39);
+}
+
+body {
+  font-family: "Noto Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+  background-color: var(--bg-color);
+  color: var(--text-color)
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+h1 {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--title-color);
+  font-size: 2.4em;
+}
+h2 {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h3 {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+

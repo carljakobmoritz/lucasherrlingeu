@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lucas Herrling</title>
+        <link rel="stylesheet" href="/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="/rat.svg">
+        <script>
+            // This code only runs in the browser
+            (function() {
+            try {
+                const currentTheme = localStorage.getItem('theme');
+                const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (currentTheme === 'dark' || (!currentTheme && supportDarkMode)) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+                } catch (e) {
+                // Handle cases where localStorage is blocked (incognito mode)
+                console.error("Theme preference could not be loaded");
+                }
+            })();
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Lucas Herrling</h1>
+        <p>Hey, I'm Luas, a student of philosophy living in Vienna. 
+        <p><a href="/public/Lebenslauf_Allgemein_2025_Lucas_Herrling.pdf">CV</a></p>
+        <p><a href="https://www.dgphil.de/wp-content/uploads/2025/10/Philosotopia_Ausgabe_0.pdf">Ratte werden</a></p>
+        <p><a href="https://www.instagram.com/finch_fragrance_99/">Instagram</a></p>
+    </body>
+</html>
