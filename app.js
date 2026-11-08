@@ -1,30 +1,41 @@
 const express = require('express');
-const app = express();
-const path = require('path');
-const PORT = 3002; // Internal port, not exposed to the public directly
+const path = require('node:path');
+const { readPage, essayFiles, readEssay, featuredEssay } = require('./markdown');
 
-// Set EJS as the view engine
+const app = express();
+const PORT = 3002;
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-// Serve static files (css, images, js) from a 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
-app.get('/', (req, res) => {
-    res.render('index', { title: 'Home Page' });
+app.get('/', async (req, res) => {
+    const [introHtml, featured] = await Promise.all([readPage('start'), featuredEssay()]);
+    res.render('index', { title: 'Lucas Herrling', introHtml, featured });
 });
 
-app.get('/ueber', (req, res) => {
-    res.render('ueber', { title: 'About me' });
+app.get('/ueber', async (req, res) => {
+    res.render('page', { title: 'Über', bodyHtml: await readPage('ueber') });
 });
 
-app.get('/texte', (req, res) => {
-    res.render('texte', { title: 'Texte' });
+app.get('/texte', async (req, res) => {
+    const files = await essayFiles();
+    const essays = (await Promise.all(files.map(readEssay))).filter(Boolean);
+    essays.sort((a, b) => a.title.localeCompare(b.title, 'de'));
+    res.render('texte', { title: 'Texte', essays });
 });
 
-app.get('/kontakt', (req, res) => {
-    res.render('kontakt', { title: 'Kontakt' });
+app.get('/texte/:slug', async (req, res) => {
+    const file = req.params.slug + '.md';
+    if (!(await essayFiles()).includes(file)) return res.sendStatus(404);
+
+    const essay = await readEssay(file);
+    if (!essay) return res.sendStatus(404);
+    res.render('page', { title: essay.title, bodyHtml: essay.bodyHtml });
+});
+
+app.get('/kontakt', async (req, res) => {
+    res.render('page', { title: 'Kontakt', bodyHtml: await readPage('kontakt') });
 });
 
 app.listen(PORT, () => {
