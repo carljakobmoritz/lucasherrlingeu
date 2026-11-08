@@ -5,3 +5,5 @@ Zuverlässiger Teamplayer mit positiver Einstellung, einer großen Portion Selbs
 Made in Heilbronn
 
 Beherrscht Englisch in Wort und Schrift
+
+Bearbeitet seine Website via Github.
