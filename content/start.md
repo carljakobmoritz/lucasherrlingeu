@@ -1,0 +1,1 @@
+Ich bin Lucas, Philosophie-Student in Wien. Aufhebung, Umwertung und Differenz sind mein *jam*, Nietzsche, Hegel und Deleuze meine *boys*. Gemeinsam wird es uns gelingen, das Phantasma namens Gesellschaft neu zu *vibe-coden*. Vielleicht solltest du mal einen meiner Texte lesen. Wie wäre es zum Beispiel mit:
