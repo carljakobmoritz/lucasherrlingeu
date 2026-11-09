@@ -6,4 +6,4 @@ Made in Heilbronn
 
 Beherrscht Englisch in Wort und Schrift
 
-Bearbeitet seine Website via Github.
+Bearbeitet seine Website via GitHub.
